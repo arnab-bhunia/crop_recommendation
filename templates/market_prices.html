@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Prices</title>
+    <link rel="stylesheet" >
+</head>
+<body>
+    <div class="background">
+        <div class="watermark">AgriTECH</div>
+    </div>
+    <h1>Market Prices</h1>
+    {% if prices %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Crop</th>
+                    <th>Price (per kg)</th>
+                    <th>Market</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for crop in prices %}
+                <tr>
+                    <td>{{ crop['name'] }}</td>
+                    <td>{{ crop['price'] }}</td>
+                    <td>{{ crop['market'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No market prices available at the moment.</p>
+    {% endif %}
+    <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+</body>
+</html>

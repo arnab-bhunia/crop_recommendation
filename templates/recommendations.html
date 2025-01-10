@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Recommendations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles3.css') }}">
+</head>
+<body>
+    <h1>Best Crop Recommendations</h1>
+    <!-- Crop Recommendations -->
+<div class="crop-container">
+    {% for crop in crops %}
+    <div class="crop-block">
+        <a href="{{ url_for('crop_details', crop_name=crop) }}" class="crop-link">
+            {{ crop }}
+        </a>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- Back to Dashboard -->
+<a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+</body>
+</html>

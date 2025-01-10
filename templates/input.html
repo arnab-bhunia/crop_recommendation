@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriTech Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles2.css') }}">
+</head>
+<body>
+    <div class="background">
+        <div class="watermark">AgriTECH</div>
+    </div>
+    <h1>AgriTECH</h1>
+    <h2>{{ session['username'] }},PLEASE FILL THE DITAILS CORRECTLY</h2>
+
+    <form method="POST" action="{{ url_for('recommendations') }}">
+        <label for="soil_type">Soil Type:</label>
+        <select id="soil_type" name="soil_type" required>
+            <option value="Loamy">Loamy</option>
+            <option value="Clayey">Clayey</option>
+            <option value="Sandy">Sandy</option>
+        </select>
+
+        <label for="temperature">Temperature (°C):</label>
+        <input type="number" id="temperature" name="temperature" step="0.1" required>
+
+        <label for="rainfall">Rainfall (mm):</label>
+        <input type="number" id="rainfall" name="rainfall" step="0.1" required>
+
+        <label for="pH">Soil pH:</label>
+        <input type="number" id="pH" name="pH" step="0.1" required>
+
+        <button type="submit">Get Recommendations</button>
+        <a href="{{ url_for('dashboard') }}" class="back-button">Back to Dashboard</a>
+    </form>
+
+    
+</body>
+</html>

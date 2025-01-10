@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Region Selection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesm.css') }}">
+</head>
+<body>
+    <div class="background">
+        <div class="watermark">AgriTECH</div>
+    </div>
+    <div class="container">
+        <h1>Select Region</h1>
+        <div class="region-buttons">
+            <a href="{{ url_for('state_selection', region='North') }}" class="region-btn">North</a>
+            <a href="{{ url_for('state_selection', region='South') }}" class="region-btn">South</a>
+            <a href="{{ url_for('state_selection', region='East') }}" class="region-btn">East</a>
+            <a href="{{ url_for('state_selection', region='West') }}" class="region-btn">West</a>
+        </div>
+        <div>
+            <a href="{{ url_for('dashboard') }}" class="back-button">Back</a>
+    </div>
+</body>
+</html>

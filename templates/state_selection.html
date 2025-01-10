@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State Selection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesm.css') }}">
+</head>
+<body>
+    <div class="background">
+        <div class="watermark">AgriTECH</div>
+    </div>
+    <div class="container">
+        <h1>Select State in {{ region }}</h1>
+        <div class="state-buttons">
+            {% for state in states %}
+                <a href="{{ url_for('crop_type_selection', state=state) }}" class="state-btn">{{ state }}</a>
+            {% endfor %}
+        </div>
+        <div>
+            <a href="{{ url_for('region_selection') }}" class="back-button">Back</a>
+    </div>
+    </div>
+</body>
+</html>

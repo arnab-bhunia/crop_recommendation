@@ -1,0 +1,74 @@
+.history-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.history-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.history-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.history-item {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 15px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.history-item p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.back-button {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
+/* Background Image */
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('background.png') no-repeat center center/cover; /* Replace 'background.png' with your image */
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.3;
+}
+
+/* Watermark */
+.watermark {
+    position: absolute;
+    font-size: 240px;
+     /* Increase the font size for a bigger watermark */
+    font-weight: bold;
+    color:  #4a463b; /* Light gold watermark color */
+    text-transform: none;
+    letter-spacing: 50px; /* Increase spacing between letters for more impact */
+    text-align: center;
+    margin-top: 10px;
+    transform: rotate(0 deg); /* Optional: rotate for a diagonal effect */
+    user-select: none;
+    
+    text-align: center; /* Adjust for centering and rotation */
+    opacity: 0.3; /* Make it subtle and transparent */
+    z-index: -1; /* Ensure it's behind other content */
+}

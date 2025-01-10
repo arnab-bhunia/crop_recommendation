@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Type Selection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesm.css') }}">
+</head>
+<body>
+    <div class="background">
+        <div class="watermark">AgriTECH</div>
+    </div>
+    <div class="container">
+        <h1>Select Crop Type for {{ state }}</h1>
+        <div class="crop-type-buttons">
+            <a href="{{ url_for('recommendations_r', state=state, crop_type='Vegetable') }}" class="crop-type-btn">Vegetable</a>
+            <a href="{{ url_for('recommendations_r', state=state, crop_type='Fruit') }}" class="crop-type-btn">Fruit</a>
+            <a href="{{ url_for('recommendations_r', state=state, crop_type='Grain') }}" class="crop-type-btn">Grain</a>
+        </div>
+        <div>
+            <a href="{{ url_for('region_selection',region=state) }}" class="back-button">Back</a>
+            
+    </div>
+    </div>
+</body>
+</html>

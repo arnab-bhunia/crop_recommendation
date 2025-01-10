@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles4.css') }}">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Background Image -->
+        <div class="background">
+            <div class="watermark">AgriTECH</div>
+        </div>
+
+        <!-- Profile Section -->
+        <div class="profile-section">
+            <button class="profile-button" onclick="goToProfile()">PROFILE</button>
+        </div>
+
+        <!-- Main Buttons -->
+        <div class="button-container">
+            <button class="dashboard-button" onclick="goToCropRecommendation()">CROP RECOMMENDATION</button>
+            <button class="dashboard-button" onclick="goToRegionSelection()">REGION SELECTION</button>
+        
+        </div>
+    </div>
+
+    <script>
+        // Functions for button actions (adjust routes as needed)
+        function goToProfile() {
+            window.location.href = "/profile";
+        }
+
+        function goToCropRecommendation() {
+            window.location.href = "/recommend";
+        }
+
+        function goToRegionSelection() {
+            window.location.href = "/region_selection";
+        }
+    </script>
+</body>
+</html>

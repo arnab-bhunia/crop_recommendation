@@ -1,0 +1,98 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    text-align: center; /* Ensures text is centered globally */
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+/* Image Container - Flexbox for Horizontal Layout */
+.image-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* Increased gap between images */
+    margin-bottom: 20px;
+    align-items: flex-start; /* Align images and text at the top */
+}
+
+/* Styling for each image box */
+.image-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 300px; /* Limit box width */
+    justify-content: center;
+}
+
+.image-box img {
+    width: 100%; /* Ensures the image stretches to fit the container */
+    height: auto; /* Maintains the aspect ratio of the images */
+    max-width: 250px; /* Consistent size for all images */
+    margin-bottom: 10px; /* Space between image and text */
+}
+
+/* Styling for the paragraph text below each image */
+.image-box p {
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center; /* Ensures the text aligns with the images */
+}
+
+/* Additional Images */
+.additional-images {
+    display: block;
+    margin: 20px auto;
+    max-width: 500px; /* Optional: Limit size of additional images */
+    height: auto;
+}
+
+/* Text Formatting */
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 10px 0;
+}
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('background.png') no-repeat center center/cover; /* Replace 'background.png' with your image */
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.3;
+}
+
+/* Watermark */
+.watermark {
+    position: absolute;
+    font-size: 240px;
+     /* Increase the font size for a bigger watermark */
+    font-weight: bold;
+    color:  #4a463b; /* Light gold watermark color */
+    text-transform: none;
+    letter-spacing: 50px; /* Increase spacing between letters for more impact */
+    text-align: center;
+    margin-top: 10px;
+    transform: rotate(0 deg); /* Optional: rotate for a diagonal effect */
+    user-select: none;
+    
+    text-align: center; /* Adjust for centering and rotation */
+    opacity: 0.3; /* Make it subtle and transparent */
+    z-index: -1; /* Ensure it's behind other content */
+}
+
+strong {
+    font-weight: bold;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ crop_name }} Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles_crop.css') }}">
+</head>
+<body>
+    <div class="background">
+        <div class="watermark">AgriTECH</div>
+    </div>
+    <h1>{{ crop_name }} Details</h1>
+    <div class="crop-details">
+        <h2>{{ crop_name }}</h2>
+        <div class="dashboard">
+        <!-- Images Section -->
+        <div class="image-container">
+            <!-- Crop Photo and Nutritional Value Images Horizontally -->
+            <div class="image-box">
+                {% if crop_data.images.crop_photo %}
+                <img class="crop-photo" src="{{ url_for('static', filename=crop_data.images.crop_photo) }}" alt="{{ crop_name }} Photo">
+                {% else %}
+                <p>No crop photo available.</p>
+                {% endif %}
+                <p><strong>Best Growing Practices:</strong></p>
+                <p>{{ crop_data.best_growing_practices }}</p>
+            </div>
+            
+            <div class="image-box">
+                {% if crop_data.images.nutritional_value %}
+                <img class="nutritional-photo" src="{{ url_for('static', filename=crop_data.images.nutritional_value) }}" alt="{{ crop_name }} Nutritional Value">
+                {% else %}
+                <p>No nutritional value image available.</p>
+                {% endif %}
+                <p><strong>Nutritional Value Explanation:</strong></p>
+                <p>{{ crop_data.nutritional_value }}</p>
+            </div>
+        </div>
+        
+        <!-- Additional Optional Images -->
+        {% if crop_data.images.demand_area %}
+        <img class="additional-images" src="{{ url_for('static', filename=crop_data.images.demand_area) }}" alt="{{ crop_name }} Demand Area">
+        {% endif %}
+        {% if crop_data.images.market_price_trends %}
+        <img class="additional-images" src="{{ url_for('static', filename=crop_data.images.market_price_trends) }}" alt="{{ crop_name }} Market Price Trends">
+        {% endif %}
+        
+        <!-- Crop Details -->
+        <p><strong>Expected Yield:</strong> {{ crop_data.expected_yield }}</p>
+        <p><strong>Market Demand:</strong> {{ crop_data.market_demand }}</p>
+    </div>
+ <div>
+    <a href="{{ url_for('dashboard') }}" class="back-button">Back to Dashboard</a>
+ </div>
+</div>
+</body>
+</html>

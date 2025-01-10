@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles6.css') }}">
+</head>
+<body>
+    <div class="background">
+        <div class="watermark">AgriTECH</div>
+    </div>
+    <div class="container">
+        <h2 class="welcome-text">Welcome, {{ session['username'] }}!</h2>
+        
+        <!-- Main Buttons -->
+        <div class="button-container">
+            <button class="profile-button" onclick="history()">View History</button>
+            <button class="profile-button" onclick="logout()">Log Out</button>
+            <a class="back-link" href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+        </div>
+    </div>
+
+    <script>
+        // Functions for button actions
+        function history() {
+            window.location.href = "/history";
+        }
+
+        function logout() {
+            window.location.href = "/logout";
+        }
+    </script>
+</body>
+</html>
