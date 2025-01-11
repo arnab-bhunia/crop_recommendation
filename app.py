@@ -107,23 +107,6 @@ def history():
     history = get_user_history(username)
     return render_template('history.html', history=history)
 
-
-
-
-'''@app.route('/market-prices')
-def market_prices():
-    api_url = "http://127.0.0.1:5000/request?commodity=Rice&state=State&market=West Bengal"  # Replace with actual API URL
-    response = requests.get(api_url)
-    if response.status_code == 200:
-        prices = response.json()
-        return render_template('market_prices.html', prices=prices)
-    else:
-        flash("Unable to fetch market prices at the moment.", "error")
-        return redirect(url_for('dashboard'))'''
-
-
-
-
 # Route for crop recommendations
 @app.route('/recommendations', methods=['POST'])
 def recommendations():
