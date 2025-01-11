@@ -9,11 +9,10 @@ app = Flask(__name__)
 app.secret_key = "9339956616"  # secure key
 
 # Sample user data 
-users = {
+"""users = {
     "arnab": "123",
     "nayan": "111",
-       }
-
+       }"""
 
 # Route for the home page
 @app.route('/')
